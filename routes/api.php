@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')->group(function () {
@@ -19,3 +21,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::apiResource('tasks', TaskController::class)->except(['show']);
 });
+
+Route::post('/orders', [OrderController::class, 'store']);
+Route::get('/orders/{id}', [OrderController::class, 'show']);
+Route::post('/webhooks/payment', [WebhookController::class, 'handlePayment']);
