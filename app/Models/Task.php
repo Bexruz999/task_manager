@@ -6,13 +6,10 @@ use App\Enums\RecurrenceType;
 use App\Enums\TaskPriority;
 use App\Enums\TaskStatus;
 use App\Enums\TaskType;
-use App\Observers\TaskObserver;
-use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-#[ObservedBy([TaskObserver::class])]
 class Task extends Model
 {
     use SoftDeletes, HasFactory;

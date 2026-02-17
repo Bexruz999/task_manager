@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class TaskStatusTest extends TestCase
 {
-    public function it_validates_status_transitions(): void
+    public function test_it_validates_status_transitions(): void
     {
         $currentStatus = 'pending';
         $newStatus = 'done';

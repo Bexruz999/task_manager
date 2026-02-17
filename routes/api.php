@@ -18,7 +18,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/tasks/client/{clientId}', [TaskController::class, 'byClient']);
     Route::patch('/tasks/{task}/status', [TaskController::class, 'updateStatus']);
 
-
     Route::apiResource('tasks', TaskController::class)->except(['show']);
 });
 
