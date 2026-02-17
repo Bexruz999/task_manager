@@ -30,7 +30,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"manager@crm.com\",\n    \"password\": \"password123\"\n}",
+					"raw": "{\n    \"name\": \"Eshmatov Toshmat\",\n    \"email\": \"toshmat@crm.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\",\n    \"role\": \"manager\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -38,13 +38,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/login",
+					"raw": "{{base_url}}/api/auth/register",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"login"
+						"auth",
+						"register"
 					]
 				}
 			},
@@ -73,7 +74,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"manager@crm.com\",\n    \"password\": \"password123\"\n}",
+					"raw": "{\n    \"email\": \"manager@crm.com\",\n    \"password\": \"password\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -81,12 +82,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/login",
+					"raw": "{{base_url}}/api/auth/login",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
+						"auth",
 						"login"
 					]
 				}
@@ -132,7 +134,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"client_id\": null,\n    \"type\": \"call\",\n    \"title\": \"Mijoz bilan shartnomani muhokama qilish\",\n    \"description\": \"Yangi tariflar bo'yicha batafsil ma'lumot berish va chegirma taklif qilish.\",\n    \"priority\": \"high\",\n    \"status\": \"pending\",\n    \"deadline\": \"2026-02-15 14:00:00\",\n    \"is_recurring\": true,\n    \"recurrence_type\": \"weekly\",\n    \"remind_before_minutes\": 30,\n    \"remind_via\": \"email\"\n}",
+					"raw": "{\n    \"type\": \"call\",\n    \"title\": \"Перезвонить клиенту Петрову\",\n    \"priority\": \"high\",\n    \"client_id\": null,\n    \"deadline\": \"2026-02-17T10:06:00Z\",\n    \"remind_before_minutes\": 30,\n    \"remind_via\": \"email\",\n    \"is_recurring\": true,\n    \"recurrence_type\": \"weekly\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -376,7 +378,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"client_id\": null,\n    \"type\": \"meeting\",\n    \"title\": \"Mijoz bilan ofisda uchrashuv (tahrirlandi)\",\n    \"description\": \"Shartnoma shartlarini qayta ko'rib chiqish va imzolash.\",\n    \"priority\": \"critical\",\n    \"status\": \"in_progress\",\n    \"deadline\": \"2026-02-18 10:00:00\",\n    \"is_recurring\": true,\n    \"recurrence_type\": \"monthly\",\n    \"remind_before_minutes\": 60,\n    \"remind_via\": \"email\"\n}",
+					"raw": "{\n    \"client_id\": null,\n    \"type\": \"meeting\",\n    \"title\": \"Встреча с клиентом в офисе (отредактировано)\",\n    \"description\": \"Пересмотреть и подписать условия договора.\",\n    \"priority\": \"critical\",\n    \"status\": \"in_progress\",\n    \"deadline\": \"2026-02-18 10:00:00\",\n    \"is_recurring\": true,\n    \"recurrence_type\": \"monthly\",\n    \"remind_before_minutes\": 60,\n    \"remind_via\": \"email\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -384,14 +386,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/tasks/7",
+					"raw": "{{base_url}}/api/tasks/8",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"tasks",
-						"7"
+						"8"
 					]
 				},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
@@ -437,7 +439,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"client_id\": null,\n    \"type\": \"meeting\",\n    \"title\": \"Mijoz bilan ofisda uchrashuv (tahrirlandi)\",\n    \"description\": \"Shartnoma shartlarini qayta ko'rib chiqish va imzolash.\",\n    \"priority\": \"critical\",\n    \"status\": \"in_progress\",\n    \"deadline\": \"2026-02-18 10:00:00\",\n    \"is_recurring\": true,\n    \"recurrence_type\": \"monthly\",\n    \"remind_before_minutes\": 60,\n    \"remind_via\": \"email\"\n}",
+					"raw": "{\n    \"status\": \"in_progress\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -445,14 +447,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/tasks/7/status",
+					"raw": "{{base_url}}/api/tasks/20/status",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"tasks",
-						"7",
+						"20",
 						"status"
 					]
 				},
@@ -502,14 +504,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/tasks/7",
+					"raw": "{{base_url}}/api/tasks/2",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"tasks",
-						"7"
+						"2"
 					]
 				},
 				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
@@ -547,10 +549,16 @@
 			"name": "Payment",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "X-Signature",
+						"value": "fe2cc4bcb2a36e39ed9e803dbe75768aa36186f85a5682e97f27cf6724e63a3a",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"transaction_id\": \"txn_abc123\",\n  \"order_id\": 1,\n  \"amount\": 25000,\n  \"status\": \"success\",\n  \"timestamp\": \"2026-02-16T12:00:00Z\"\n}",
+					"raw": "{\n  \"transaction_id\": \"txn_abc123\",\n  \"order_id\": 5,\n  \"amount\": 25000,\n  \"status\": \"success\",\n  \"timestamp\": \"2026-02-16T12:00:00Z\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -577,7 +585,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "1|zY8vrAyeRjMGxqaQz8m0B5UCdfKAiorKDCgFZ0gA9bc4e736",
+				"value": "",
 				"type": "string"
 			}
 		]
