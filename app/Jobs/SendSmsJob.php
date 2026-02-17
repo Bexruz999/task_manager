@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Contracts\SmsNotificationInterface;
+use Harris21\Fuse\Middleware\CircuitBreakerMiddleware;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -13,10 +14,18 @@ class SendSmsJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $tries = 0;
+    public $maxExceptions = 3;
+
     public function __construct(
         protected string $phone,
         protected string $message
     ) {}
+
+    public function middleware(): array
+    {
+        return [new CircuitBreakerMiddleware('sms')];
+    }
 
     public function handle(SmsNotificationInterface $smsService): void
     {
